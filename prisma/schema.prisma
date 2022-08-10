@@ -13,3 +13,11 @@ datasource db {
 model Example {
     id String @id @default(cuid())
 }
+
+model ShortLink {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  url String @db.VarChar(2000)
+  slug String @unique
+  @@index(slug)
+}
