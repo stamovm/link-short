@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     'flex flex-col justify-center items-center h-screen bg-gray-950 text-white'
 
   const input =
-    'text-black my-1 p-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-pink-500 focus:ring-pink-500 block w-full rounded-md sm:text-sm focus:ring-1'
+    'text-black my-1 p-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:ring-teal-500 block w-full rounded-md sm:text-sm focus:ring-1'
 
   const slugInput = classNames(input, {
     'border-red-500': slugCheck.isFetched && slugCheck.data!.count > 0,
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           <input
             type="button"
             value="Copy Link"
-            className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer ml-2"
+            className="rounded bg-teal-500 py-1.5 px-1 font-bold cursor-pointer ml-2"
             onClick={() => {
               copy(`${url}/link/${form.slug}`)
             }}
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         <input
           type="button"
           value="Reset"
-          className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer m-5"
+          className="rounded bg-teal-500 py-1.5 px-1 font-bold cursor-pointer m-5"
           onClick={() => {
             createSlug.reset()
             setForm({ slug: '', url: '' })
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         className="flex flex-col justify-center h-screen sm:w-2/3 md:w-1/2 lg:w-1/3"
       >
         <div className="flex items-center">
-          <span className="font-medium mr-2">{url}/</span>
+          <span className="font-medium mr-2 text-teal-600">{url}/</span>
           <input
             type="text"
             onChange={(e) => {
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
           <input
             type="button"
             value="Random"
-            className="rounded bg-pink-500 py-1.5 px-1 font-bold cursor-pointer ml-2"
+            className="rounded bg-teal-500 py-1.5 px-1 font-bold cursor-pointer ml-2"
             onClick={() => {
               const slug = nanoid()
               setForm({
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
           />
         </div>
         <div className="flex items-center">
-          <span className="font-medium mr-2">Link</span>
+          <span className="font-medium mr-2 text-teal-600">Link</span>
           <input
             type="url"
             onChange={(e) => setForm({ ...form, url: e.target.value })}
@@ -115,7 +115,7 @@ const Home: NextPage = () => {
         <input
           type="submit"
           value="Create"
-          className="rounded bg-pink-500 p-1 font-bold cursor-pointer mt-1"
+          className="rounded bg-teal-500 p-1 font-bold cursor-pointer mt-1"
           disabled={slugCheck.isFetched && slugCheck.data!.count > 0}
         />
       </form>
