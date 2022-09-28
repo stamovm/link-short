@@ -17,10 +17,10 @@ const Home: NextPage = () => {
 
   useEffect(() => setUrl(window.location.origin), [])
 
-  const slugCheck = trpc.useQuery(['slugCheck', { slug: form.slug }], {
+  const slugCheck = trpc.useQuery(['link.slugCheck', { slug: form.slug }], {
     enabled: false,
   })
-  const createSlug = trpc.useMutation(['createSlug'])
+  const createSlug = trpc.useMutation(['link.createSlug'])
 
   const main =
     'flex flex-col justify-center items-center h-screen bg-gray-950 text-white'
